@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 641px)">
+  <link rel="preload" as="image" href="assets/img/hero-mobile.jpg" media="(max-width: 640px)">
 
   <style>
     :root{
@@ -98,6 +100,12 @@
       content:""; position:absolute; inset:0; z-index:-2;
       background:url('assets/img/hero.jpg') center 35%/cover no-repeat;
       transform: scale(1.02);
+    }
+    @media (max-width: 640px){
+      .hero::before{
+        background-image: url('assets/img/hero-mobile.jpg');
+        background-position: 35% 55%;
+      }
     }
     .hero::after{
       content:""; position:absolute; inset:0; z-index:-1;
@@ -427,6 +435,27 @@
       .stot-card{padding:24px}
       .sponsor-banner{padding:28px 22px}
       .foot-grid{grid-template-columns:1fr}
+
+      /* Mobile-specific polish */
+      section{padding:48px 0}
+      .brand-text span{display:none}
+      .eyebrow{font-size:.72rem; padding:5px 10px; letter-spacing:.04em}
+      .hero h1{font-size:2.4rem}
+      .hero p.lead{font-size:1rem}
+      .hero-inner{padding-top:80px}
+      .status-strip{padding:18px 0}
+      .status-cell .num{font-size:1.5rem}
+      .status-cell .lab{font-size:.72rem}
+      nav.menu.open a{
+        min-height:44px;
+        display:flex;
+        align-items:center;
+        padding:10px 14px;
+        font-size:1rem;
+      }
+      .sponsor-card{min-height:140px; padding:22px 16px}
+      .sponsor-card .name{font-size:.85rem}
+      details summary{padding:4px 0}
     }
   </style>
 </head>
@@ -457,9 +486,9 @@
   <!-- Hero -->
   <section class="hero" id="top" role="banner">
     <div class="hero-inner">
-      <span class="eyebrow">Min Købmand lukker 31. december 2026</span>
+      <span class="eyebrow">Lukker 31. december 2026</span>
       <h1>Vi bygger byens nye købmand sammen.</h1>
-      <p class="lead">Sønderholm består — også når den gamle butik lukker. En lokal arbejdsgruppe, fonde, lokale virksomheder og over 400 anpartshavere er gået sammen om at sikre, at vi også i fremtiden kan handle lokalt. Her er vores plan, fremgangen og menneskene bag.</p>
+      <p class="lead">Sønderholm består — også når den gamle butik lukker. Arbejdsgruppen, fondene og byens borgere er gået sammen om at sikre vores lokale købmand.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#stot">Bliv anpartshaver →</a>
         <a class="btn btn-ghost" href="#status">Se projektstatus</a>
@@ -500,35 +529,35 @@
 
       <div class="sponsor-grid" aria-label="Sponsorlogoer">
         <a class="sponsor-card" href="#" title="Din Servicemand v/ Lars Nielsson">
-          <img src="assets/img/sponsor-din-servicemand.png" alt="Din Servicemand" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-din-servicemand.png" alt="Din Servicemand" />
           <span class="name">Din Servicemand</span>
         </a>
         <a class="sponsor-card" href="#" title="MD Entreprise v/ Michael Duus">
-          <img src="assets/img/sponsor-md-entreprise.jpg" alt="MD Entreprise" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-md-entreprise.jpg" alt="MD Entreprise" />
           <span class="name">MD Entreprise</span>
         </a>
         <a class="sponsor-card" href="#" title="Jysk Ventilation">
-          <img src="assets/img/sponsor-jysk-ventilation.png" alt="Jysk Ventilation" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-jysk-ventilation.png" alt="Jysk Ventilation" />
           <span class="name">Jysk Ventilation</span>
         </a>
         <a class="sponsor-card" href="#" title="DOCUPRINT">
-          <img src="assets/img/sponsor-docuprint.png" alt="DOCUPRINT — Scan, Print, Kopi" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-docuprint.png" alt="DOCUPRINT — Scan, Print, Kopi" />
           <span class="name">DOCUPRINT</span>
         </a>
         <a class="sponsor-card" href="#" title="home Odense Nord">
-          <img src="assets/img/sponsor-home-odense-nord.jpg" alt="home Odense Nord — Ejendomsmægler" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-home-odense-nord.jpg" alt="home Odense Nord — Ejendomsmægler" />
           <span class="name">home Odense Nord</span>
         </a>
         <a class="sponsor-card dark" href="#" title="NORDIQ">
-          <img src="assets/img/sponsor-nordiq.jpg" alt="NORDIQ" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-nordiq.jpg" alt="NORDIQ" />
           <span class="name">NORDIQ</span>
         </a>
         <a class="sponsor-card" href="#" title="Den Gyldne Hotdog">
-          <img src="assets/img/sponsor-den-gyldne-hotdog.png" alt="Den Gyldne Hotdog" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-den-gyldne-hotdog.png" alt="Den Gyldne Hotdog" />
           <span class="name">Den Gyldne Hotdog</span>
         </a>
         <a class="sponsor-card" href="#" title="Den Lille Quinta">
-          <img src="assets/img/sponsor-den-lille-quinta.jpg" alt="Den Lille Quinta" />
+          <img loading="lazy" decoding="async" src="assets/img/sponsor-den-lille-quinta.jpg" alt="Den Lille Quinta" />
           <span class="name">Den Lille Quinta</span>
         </a>
       </div>
