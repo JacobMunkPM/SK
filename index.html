@@ -184,6 +184,32 @@
     .sponsor-banner p{color:#cfe1d7; max-width:62ch; margin:0}
     .sponsor-banner .heart{color:var(--red); display:inline-block; transform:translateY(2px)}
 
+    .sponsor-tier{margin-bottom:36px}
+    .sponsor-tier:last-of-type{margin-bottom:0}
+    .sponsor-tier-title{
+      font-family:'Bitter', serif;
+      font-size:1.05rem; font-weight:800;
+      letter-spacing:.14em; text-transform:uppercase;
+      margin:0 0 16px;
+      display:flex; align-items:center; gap:14px;
+      color:var(--green-900);
+    }
+    .sponsor-tier-title::before{
+      content:""; width:32px; height:5px; border-radius:3px;
+      background:var(--tier-color, var(--green-700));
+      display:inline-block; flex-shrink:0;
+    }
+    .sponsor-tier-title .amount{
+      font-family:'Inter', sans-serif;
+      font-size:.85rem; font-weight:500;
+      color:var(--muted);
+      letter-spacing:.03em;
+      text-transform:none;
+    }
+    .sponsor-tier.gold{--tier-color:#d4a017}
+    .sponsor-tier.silver{--tier-color:#9aa0a6}
+    .sponsor-tier.bronze{--tier-color:#b87333}
+
     .sponsor-grid{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
@@ -534,39 +560,54 @@
         <p>Uden vores sponsorer var det ikke lykkedes at nå så langt. Lokale erhvervsdrivende har doneret penge, materialer og timer til at sikre, at Sønderholm fortsat har en købmand. Vi opfordrer alle i byen til at støtte dem, der støtter os.</p>
       </div>
 
-      <div class="sponsor-grid" aria-label="Sponsorlogoer">
-        <a class="sponsor-card" href="#" title="Din Servicemand v/ Lars Nielsson">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-din-servicemand.png" alt="Din Servicemand" />
-          <span class="name">Din Servicemand</span>
-        </a>
-        <a class="sponsor-card" href="#" title="MD Entreprise v/ Michael Duus">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-md-entreprise.jpg" alt="MD Entreprise" />
-          <span class="name">MD Entreprise</span>
-        </a>
-        <a class="sponsor-card" href="#" title="Jysk Ventilation">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-jysk-ventilation.png" alt="Jysk Ventilation" />
-          <span class="name">Jysk Ventilation</span>
-        </a>
-        <a class="sponsor-card" href="#" title="DOCUPRINT">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-docuprint.png" alt="DOCUPRINT — Scan, Print, Kopi" />
-          <span class="name">DOCUPRINT</span>
-        </a>
-        <a class="sponsor-card" href="#" title="home Odense Nord">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-home-odense-nord.jpg" alt="home Odense Nord — Ejendomsmægler" />
-          <span class="name">home Odense Nord</span>
-        </a>
-        <a class="sponsor-card dark" href="#" title="NORDIQ">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-nordiq.jpg" alt="NORDIQ" />
-          <span class="name">NORDIQ</span>
-        </a>
-        <a class="sponsor-card" href="#" title="Den Gyldne Hotdog">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-den-gyldne-hotdog.png" alt="Den Gyldne Hotdog" />
-          <span class="name">Den Gyldne Hotdog</span>
-        </a>
-        <a class="sponsor-card" href="#" title="Den Lille Quinta">
-          <img loading="lazy" decoding="async" src="assets/img/sponsor-den-lille-quinta.jpg" alt="Den Lille Quinta" />
-          <span class="name">Den Lille Quinta</span>
-        </a>
+      <div class="sponsor-tier gold" aria-label="Guld-sponsorer">
+        <h3 class="sponsor-tier-title">Guld <span class="amount">+100.000 kr.</span></h3>
+        <div class="sponsor-grid">
+          <a class="sponsor-card" href="#" title="Jysk Ventilation">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-jysk-ventilation.png" alt="Jysk Ventilation" />
+            <span class="name">Jysk Ventilation</span>
+          </a>
+          <a class="sponsor-card" href="#" title="MD Entreprise v/ Michael Duus">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-md-entreprise.jpg" alt="MD Entreprise" />
+            <span class="name">MD Entreprise</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sponsor-tier silver" aria-label="Sølv-sponsorer">
+        <h3 class="sponsor-tier-title">Sølv <span class="amount">+50.000 kr.</span></h3>
+        <div class="sponsor-grid">
+          <a class="sponsor-card" href="#" title="Din Servicemand v/ Lars Nielsson">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-din-servicemand.png" alt="Din Servicemand" />
+            <span class="name">Din Servicemand</span>
+          </a>
+          <a class="sponsor-card" href="#" title="DOCUPRINT">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-docuprint.png" alt="DOCUPRINT — Scan, Print, Kopi" />
+            <span class="name">DOCUPRINT</span>
+          </a>
+          <a class="sponsor-card dark" href="#" title="NORDIQ">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-nordiq.jpg" alt="NORDIQ" />
+            <span class="name">NORDIQ</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sponsor-tier bronze" aria-label="Bronze-sponsorer">
+        <h3 class="sponsor-tier-title">Bronze <span class="amount">+5.000 kr.</span></h3>
+        <div class="sponsor-grid">
+          <a class="sponsor-card" href="#" title="Den Lille Quinta">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-den-lille-quinta.jpg" alt="Den Lille Quinta" />
+            <span class="name">Den Lille Quinta</span>
+          </a>
+          <a class="sponsor-card" href="#" title="home Odense Nord">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-home-odense-nord.jpg" alt="home Odense Nord — Ejendomsmægler" />
+            <span class="name">home Odense Nord</span>
+          </a>
+          <a class="sponsor-card" href="#" title="Den Gyldne Hotdog">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-den-gyldne-hotdog.png" alt="Den Gyldne Hotdog" />
+            <span class="name">Den Gyldne Hotdog</span>
+          </a>
+        </div>
       </div>
 
       <div class="sponsor-cta">
