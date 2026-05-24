@@ -545,8 +545,8 @@
         <span class="lab">Lokale sponsorer</span>
       </div>
       <div class="status-cell">
-        <span class="num">31.12.2026</span>
-        <span class="lab">Min Købmand lukker</span>
+        <span class="num" id="days-until-close">—</span>
+        <span class="lab">Dage til købmanden lukker</span>
       </div>
     </div>
   </div>
@@ -862,6 +862,18 @@
   </footer>
 
   <script>
+    // Nedtælling til Min Købmand lukker (31. december 2026)
+    (function(){
+      const el = document.getElementById('days-until-close');
+      if (!el) return;
+      const target = new Date(2026, 11, 31); // 31. december 2026 (måned er 0-indekseret)
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      const diffMs = target - today;
+      const days = Math.max(0, Math.ceil(diffMs / 86400000));
+      el.textContent = days.toLocaleString('da-DK');
+    })();
+
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
