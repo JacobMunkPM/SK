@@ -383,12 +383,15 @@
       background:#fff; color:var(--ink); padding:30px; border-radius:12px;
     }
     .kontakt-card h3{color:var(--green-900)}
-    .kontakt-row{display:flex; gap:14px; margin-top:14px; align-items:center}
+    .kontakt-row{display:flex; gap:14px; margin-top:14px; align-items:center; min-width:0}
     .kontakt-row .ic{
-      width:42px; height:42px; border-radius:10px; display:grid; place-items:center;
+      width:42px; height:42px; flex:0 0 42px; border-radius:10px; display:grid; place-items:center;
       background:var(--green-50); color:var(--green-800); font-size:1.1rem;
     }
-    .kontakt-row a{text-decoration:none; color:var(--ink); font-weight:600}
+    .kontakt-row a{
+      text-decoration:none; color:var(--ink); font-weight:600;
+      min-width:0; word-break:break-word; overflow-wrap:anywhere; flex:1 1 auto;
+    }
     .kontakt-row span{display:block; font-size:.8rem; color:var(--muted); font-weight:400}
 
     /* Footer */
@@ -456,6 +459,9 @@
       .sponsor-card{min-height:140px; padding:22px 16px}
       .sponsor-card .name{font-size:.85rem}
       details summary{padding:4px 0}
+      .kontakt-wrap{padding:24px}
+      .kontakt-card{padding:20px}
+      .kontakt-row a{font-size:.95rem}
     }
   </style>
 </head>
