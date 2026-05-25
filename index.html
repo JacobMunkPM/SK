@@ -33,6 +33,7 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+    html{scroll-padding-top:80px}
     body{
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color:var(--ink);
@@ -80,6 +81,63 @@
       text-decoration:none; color:var(--green-900);
       padding:8px 12px; border-radius:8px; font-weight:500; font-size:.95rem;
     }
+
+    /* Annonce-stribe (generalforsamling) */
+    .announce-banner{background:var(--green-900); color:#fff}
+    .announce-link{
+      display:flex; align-items:center; justify-content:center; gap:14px;
+      padding:10px 16px;
+      color:#fff; text-decoration:none;
+      font-size:.95rem; font-weight:600;
+      letter-spacing:.02em;
+    }
+    .announce-link:hover .announce-cta{text-decoration:underline}
+    .announce-icon{font-size:1.05rem; line-height:1}
+    .announce-cta{opacity:.85; font-weight:500}
+    @media (max-width: 640px){
+      .announce-link{flex-wrap:wrap; gap:4px 12px; font-size:.85rem; padding:10px 14px; text-align:center}
+    }
+
+    /* Generalforsamling-sektion */
+    #generalforsamling{padding:56px 0; background:var(--cream)}
+    .gf-card{
+      background:#fff;
+      border-radius:var(--radius);
+      border-top:5px solid var(--red);
+      padding:40px;
+      box-shadow:var(--shadow);
+    }
+    .gf-card h2{margin-top:8px}
+    .gf-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      margin-top:24px;
+    }
+    .gf-info-list{list-style:none; padding:0; margin:0}
+    .gf-info-list li{margin-bottom:14px; line-height:1.5; color:var(--ink); font-size:1.02rem}
+    .gf-info-list li:last-child{margin-bottom:0}
+    .gf-info-list strong{color:var(--green-900); display:inline-block; min-width:130px}
+    .gf-agenda h3{color:var(--green-900); margin-bottom:12px}
+    .gf-agenda ol{padding-left:20px; margin:0; color:var(--muted)}
+    .gf-agenda li{margin-bottom:6px; line-height:1.5}
+    @media (max-width: 920px){
+      .gf-grid{grid-template-columns:1fr; gap:24px}
+      .gf-card{padding:32px 24px}
+    }
+    @media (max-width: 640px){
+      #generalforsamling{padding:40px 0}
+      .gf-card{padding:24px 20px}
+      .gf-info-list strong{display:block; min-width:0; margin-bottom:2px}
+    }
+
+    /* Tidslinje — fremhævet punkt */
+    .t-item.highlight::before{
+      background:#d4a017;
+      border-color:#d4a017;
+      box-shadow:0 0 0 6px rgba(212, 160, 23, .2);
+    }
+    .t-item.highlight .when{color:#b45309; font-weight:800}
     nav.menu a:hover{background:var(--green-50)}
     .cta-mini{
       background:var(--red); color:#fff !important; padding:9px 14px !important;
@@ -535,6 +593,15 @@
     </div>
   </header>
 
+  <!-- Annonce-stribe: ekstraordinær generalforsamling (skjules automatisk efter 16. juni 2026) -->
+  <div id="gf-banner" class="announce-banner">
+    <a class="announce-link" href="#generalforsamling">
+      <span class="announce-icon">⚠</span>
+      <span class="announce-text">Ekstraordinær generalforsamling — 16. juni</span>
+      <span class="announce-cta">Læs mere ↓</span>
+    </a>
+  </div>
+
   <!-- Hero -->
   <section class="hero" id="top" role="banner">
     <div class="hero-inner">
@@ -544,6 +611,35 @@
       <div class="hero-actions">
         <a class="btn btn-primary" href="#stot">Bliv anpartshaver →</a>
         <a class="btn btn-ghost" href="#status">Se projektstatus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Generalforsamling-sektion (skjules automatisk efter 16. juni 2026) -->
+  <section id="generalforsamling">
+    <div class="container">
+      <div class="gf-card">
+        <span class="eyebrow-line">Vigtig information</span>
+        <h2>Ekstraordinær generalforsamling</h2>
+        <div class="gf-grid">
+          <div>
+            <ul class="gf-info-list">
+              <li><strong>Tidspunkt:</strong> 16. juni 2026 kl. 19.00</li>
+              <li><strong>Sted:</strong> Fællesrummet på Sønderholm Skole</li>
+              <li><strong>Hvem må deltage?</strong> Alle anpartshavere, sponsorer og interesserede</li>
+            </ul>
+          </div>
+          <div class="gf-agenda">
+            <h3>Dagsorden</h3>
+            <ol>
+              <li>Velkomst</li>
+              <li>Valg af dirigent</li>
+              <li>Information og spørgsmål vedrørende ny projektplan</li>
+              <li>Afstemning om ny projektplan</li>
+              <li>Eventuelt</li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -781,6 +877,11 @@
           <div class="what">3 mio. kr. i hus — kommuneplan i gang</div>
           <p>Kommuneplanramme og lokalplan er igangsat. Vi arbejder på det grønne udtryk for det nye butikshus og henter de sidste penge ind.</p>
         </div>
+        <div class="t-item highlight">
+          <div class="when">16. juni 2026</div>
+          <div class="what">Ekstraordinær generalforsamling</div>
+          <p>Ny retning for projektet lægges til afstemning. Alle anpartshavere, sponsorer og interesserede er velkomne i Fællesrummet på Sønderholm Skole kl. 19.00.</p>
+        </div>
         <div class="t-item">
           <div class="when">31. december 2026</div>
           <div class="what">Den nuværende Min Købmand lukker</div>
@@ -898,6 +999,19 @@
   </footer>
 
   <script>
+    // Skjul ekstraordinær generalforsamling-banner og -sektion efter 16. juni 2026
+    (function(){
+      const hideAfter = new Date(2026, 5, 17); // 17. juni 2026 (måned er 0-indekseret)
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      if (today >= hideAfter) {
+        const banner = document.getElementById('gf-banner');
+        const section = document.getElementById('generalforsamling');
+        if (banner) banner.style.display = 'none';
+        if (section) section.style.display = 'none';
+      }
+    })();
+
     // Nedtælling til Min Købmand lukker (31. december 2026)
     (function(){
       const el = document.getElementById('days-until-close');
