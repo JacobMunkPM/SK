@@ -241,6 +241,22 @@
     }
     .sponsor-card.dark{ background:#111; border-color:#111 }
     .sponsor-card.dark .name{color:#fff}
+    .sponsor-card .logo-placeholder{
+      height:80px; width:100%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--muted); font-size:.85rem; font-style:italic;
+      text-align:center;
+    }
+    .sponsor-card.placeholder{
+      background:var(--cream);
+      border-style:dashed;
+      border-color:var(--green-500);
+    }
+    .sponsor-card.placeholder:hover{background:#fff}
+    .sponsor-card.placeholder .placeholder-text{
+      font-size:1rem; font-weight:600; color:var(--green-800);
+      text-align:center; line-height:1.35;
+    }
 
     .sponsor-cta{
       display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:36px;
@@ -298,7 +314,7 @@
     .bar-fill{
       height:100%; background:linear-gradient(90deg, var(--green-700), var(--green-500));
       border-radius:999px;
-      width:48%;
+      width:45%;
       position:relative;
     }
     .bar-fill::after{
@@ -536,7 +552,7 @@
   <div class="status-strip" aria-label="Hurtigt overblik">
     <div class="status-grid container">
       <div class="status-cell">
-        <span class="num">2,27 mio.</span>
+        <span class="num">2,10 mio.</span>
         <span class="lab">Indsamlet i alt</span>
       </div>
       <div class="status-cell">
@@ -544,7 +560,7 @@
         <span class="lab">Har købt anparter</span>
       </div>
       <div class="status-cell">
-        <span class="num">8</span>
+        <span class="num">9</span>
         <span class="lab">Lokale sponsorer</span>
       </div>
       <div class="status-cell">
@@ -570,27 +586,14 @@
             <img loading="lazy" decoding="async" src="assets/img/sponsor-jysk-ventilation.png" alt="Jysk Ventilation" />
             <span class="name">Jysk Ventilation</span>
           </a>
-          <a class="sponsor-card" href="#" title="MD Entreprise v/ Michael Duus">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-md-entreprise.jpg" alt="MD Entreprise" />
-            <span class="name">MD Entreprise</span>
-          </a>
         </div>
       </div>
 
       <div class="sponsor-tier silver" aria-label="Sølv-sponsorer">
         <h3 class="sponsor-tier-title">Sølvsponsere <span class="amount">+50.000 kr.</span></h3>
         <div class="sponsor-grid">
-          <a class="sponsor-card" href="#" title="Din Servicemand v/ Lars Nielsson">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-din-servicemand.png" alt="Din Servicemand" />
-            <span class="name">Din Servicemand</span>
-          </a>
-          <a class="sponsor-card" href="#" title="DOCUPRINT">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-docuprint.png" alt="DOCUPRINT — Scan, Print, Kopi" />
-            <span class="name">DOCUPRINT</span>
-          </a>
-          <a class="sponsor-card" href="#" title="NORDIQ">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-nordiq.jpg" alt="NORDIQ" />
-            <span class="name">NORDIQ</span>
+          <a class="sponsor-card placeholder" href="#kontakt" title="Bliv sølvsponsor">
+            <span class="placeholder-text">Plads til din virksomhed</span>
           </a>
         </div>
       </div>
@@ -598,17 +601,37 @@
       <div class="sponsor-tier bronze" aria-label="Bronze-sponsorer">
         <h3 class="sponsor-tier-title">Bronzesponsere <span class="amount">+5.000 kr.</span></h3>
         <div class="sponsor-grid">
-          <a class="sponsor-card" href="#" title="home Odense Nord">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-home-odense-nord.jpg" alt="home Odense Nord — Ejendomsmægler" />
-            <span class="name">home Odense Nord</span>
+          <a class="sponsor-card" href="#" title="Sydgården">
+            <span class="logo-placeholder">Logo kommer snart</span>
+            <span class="name">Sydgården</span>
           </a>
-          <a class="sponsor-card" href="#" title="Den Gyldne Hotdog">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-den-gyldne-hotdog.png" alt="Den Gyldne Hotdog" />
-            <span class="name">Den Gyldne Hotdog</span>
+          <a class="sponsor-card" href="#" title="Home">
+            <span class="logo-placeholder">Logo kommer snart</span>
+            <span class="name">Home</span>
           </a>
-          <a class="sponsor-card" href="#" title="Den Lille Quinta">
-            <img loading="lazy" decoding="async" src="assets/img/sponsor-den-lille-quinta.jpg" alt="Den Lille Quinta" />
-            <span class="name">Den Lille Quinta</span>
+          <a class="sponsor-card" href="#" title="A/B Sønderbo">
+            <span class="logo-placeholder">Logo kommer snart</span>
+            <span class="name">A/B Sønderbo</span>
+          </a>
+          <a class="sponsor-card" href="#" title="MD Enterprise v/ Michael Duus">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-md-entreprise.jpg" alt="MD Enterprise" />
+            <span class="name">MD Enterprise</span>
+          </a>
+          <a class="sponsor-card" href="#" title="Min Købmand">
+            <span class="logo-placeholder">Logo kommer snart</span>
+            <span class="name">Min Købmand</span>
+          </a>
+          <a class="sponsor-card" href="#" title="Docuprint">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-docuprint.png" alt="Docuprint" />
+            <span class="name">Docuprint</span>
+          </a>
+          <a class="sponsor-card" href="#" title="Din Servicemand v/ Lars Nielsson">
+            <img loading="lazy" decoding="async" src="assets/img/sponsor-din-servicemand.png" alt="Din Servicemand" />
+            <span class="name">Din Servicemand</span>
+          </a>
+          <a class="sponsor-card" href="#" title="Tylergården">
+            <span class="logo-placeholder">Logo kommer snart</span>
+            <span class="name">Tylergården</span>
           </a>
         </div>
       </div>
@@ -677,11 +700,11 @@
       <div class="progress-wrap">
         <div class="progress-stats">
           <div>
-            <div class="big">2.270.000 kr.</div>
+            <div class="big">2.097.500 kr.</div>
             <div class="goal">af målet på ca. 4.700.000 kr.</div>
           </div>
           <div style="text-align:right">
-            <div class="big" style="color:var(--red)">~48%</div>
+            <div class="big" style="color:var(--red)">~45%</div>
             <div class="goal">af budgettet er finansieret</div>
           </div>
         </div>
@@ -697,7 +720,7 @@
           </div>
           <div class="pb">
             <div class="pb-label">Sponsorater fra lokale virksomheder</div>
-            <div class="pb-value">390.000 kr.</div>
+            <div class="pb-value">217.500 kr.</div>
           </div>
         </div>
       </div>
