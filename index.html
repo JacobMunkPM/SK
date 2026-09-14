@@ -901,8 +901,7 @@
           <div class="mobilepay-qr">
             <img src="assets/img/774052177_1526338232841300_2918296098596947878_n.png" alt="MobilePay QR-kode — Sønderholm Butikshus" loading="lazy" decoding="async">
           </div>
-          <a class="btn btn-mobilepay" href="https://qr.mobilepay.dk/vp/rfld0gUcM" style="width:100%; justify-content:center">Åbn MobilePay →</a>
-          <div class="bank-info mobilepay-info" style="margin-top:18px">
+          <div class="bank-info mobilepay-info" style="margin-top:8px">
             Scan QR-koden med din telefon eller søg efter <strong>117084</strong> i MobilePay-appen. Skriv gerne dit navn i beskedfeltet.
           </div>
         </div>
@@ -1067,19 +1066,6 @@
         if (banner) banner.style.display = 'none';
         if (section) section.style.display = 'none';
       }
-    })();
-
-    // MobilePay-knap: på Android forcerer vi app-åbning via intent://
-    (function(){
-      const btn = document.querySelector('.btn-mobilepay');
-      if (!btn) return;
-      btn.addEventListener('click', function(e){
-        if (/Android/i.test(navigator.userAgent)) {
-          e.preventDefault();
-          const fallback = encodeURIComponent('https://qr.mobilepay.dk/vp/rfld0gUcM');
-          window.location.href = 'intent://qr.mobilepay.dk/vp/rfld0gUcM#Intent;scheme=https;package=dk.danskebank.mobilepay;S.browser_fallback_url=' + fallback + ';end';
-        }
-      });
     })();
 
     // Nedtælling til Min Købmand lukker (31. december 2026)
