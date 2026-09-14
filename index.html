@@ -1069,6 +1069,19 @@
       }
     })();
 
+    // MobilePay-knap: på Android forcerer vi app-åbning via intent://
+    (function(){
+      const btn = document.querySelector('.btn-mobilepay');
+      if (!btn) return;
+      btn.addEventListener('click', function(e){
+        if (/Android/i.test(navigator.userAgent)) {
+          e.preventDefault();
+          const fallback = encodeURIComponent('https://qr.mobilepay.dk/vp/rfld0gUcM');
+          window.location.href = 'intent://qr.mobilepay.dk/vp/rfld0gUcM#Intent;scheme=https;package=dk.danskebank.mobilepay;S.browser_fallback_url=' + fallback + ';end';
+        }
+      });
+    })();
+
     // Nedtælling til Min Købmand lukker (31. december 2026)
     (function(){
       const el = document.getElementById('days-until-close');
