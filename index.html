@@ -407,6 +407,33 @@
     .stot-grid{
       display:grid; grid-template-columns: 1.1fr .9fr; gap:50px; align-items:center;
     }
+    .stot-header{max-width:70ch; margin:0 auto 40px; text-align:center}
+    .stot-header h2{margin-bottom:14px}
+    .stot-cards{
+      display:grid; grid-template-columns: 1fr 1fr; gap:32px;
+      align-items:stretch;
+    }
+
+    /* MobilePay-kort */
+    .mobilepay-card .price.mobilepay-number{color:#5A78FF; letter-spacing:-.02em}
+    .mobilepay-qr{
+      margin:18px 0 20px;
+      padding:14px;
+      background:var(--cream);
+      border-radius:12px;
+      text-align:center;
+    }
+    .mobilepay-qr img{
+      width:180px; height:180px;
+      display:inline-block;
+      max-width:100%;
+    }
+    .btn-mobilepay{background:#5A78FF; color:#fff}
+    .btn-mobilepay:hover{
+      background:#3E5FE5; transform:translateY(-1px);
+      box-shadow:0 8px 24px rgba(90,120,255,.35);
+    }
+    .mobilepay-info{border-left-color:#5A78FF}
     .stot-card{
       background:#fff; color:var(--ink); border-radius:var(--radius);
       padding:34px; box-shadow:var(--shadow);
@@ -522,6 +549,8 @@
       .status-cards{grid-template-columns:repeat(2,1fr)}
       .status-grid{grid-template-columns:repeat(2,1fr); gap:16px}
       .stot-grid{grid-template-columns:1fr; gap:30px}
+      .stot-cards{grid-template-columns:1fr; gap:24px}
+      .stot-header{text-align:left; margin-bottom:28px}
       .kontakt-wrap{grid-template-columns:1fr; padding:34px}
       .foot-grid{grid-template-columns:1fr 1fr; gap:24px}
       .progress-breakdown{grid-template-columns:1fr}
@@ -591,6 +620,7 @@
         <a href="#tidslinje">Tidsplan</a>
         <a href="#faq">Spørgsmål</a>
         <a href="#kontakt">Kontakt</a>
+        <a href="#donation">Donér</a>
         <a class="cta-mini" href="#stot">Køb anparter</a>
       </nav>
       <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
@@ -841,13 +871,13 @@
   <!-- Anparter / Støt -->
   <section id="stot">
     <div class="container">
-      <div class="stot-grid">
-        <div>
-          <span class="eyebrow-line" style="color:#ffd9dc">Bliv en del af det</span>
-          <h2>Køb anparter og vær med til at bygge butikken</h2>
-          <p>Anpartshaverne ejer butikken og lejer den ud. Huslejen finansierer drift og vedligehold. Du kan ikke komme til at betale mere i fremtiden — medmindre du selv ønsker flere anparter — og du hæfter ikke for et eventuelt underskud i driften.</p>
-          <p style="margin-top:18px"><strong style="color:#fff">Sammenhold i byen.</strong> Huspriserne falder ikke. Fortsat mulighed for at handle lokalt. En by i udvikling — fremfor afvikling.</p>
-        </div>
+      <div class="stot-header">
+        <span class="eyebrow-line" style="color:#ffd9dc">Bliv en del af det</span>
+        <h2>Køb anparter — eller donér via MobilePay</h2>
+        <p>Der er to måder at støtte projektet på: Bliv medejer med en anpart, eller giv et frit beløb via MobilePay. Anpartshaverne ejer butikken og lejer den ud — huslejen finansierer drift og vedligehold. Du kan ikke komme til at betale mere i fremtiden, og du hæfter ikke for et eventuelt underskud.</p>
+        <p style="margin-top:18px"><strong style="color:#fff">Sammenhold i byen.</strong> Huspriserne falder ikke. Fortsat mulighed for at handle lokalt. En by i udvikling — fremfor afvikling.</p>
+      </div>
+      <div class="stot-cards">
         <div class="stot-card">
           <h3>Anparter</h3>
           <div class="price">2.500 kr. <small>/ stk.</small></div>
@@ -862,6 +892,18 @@
             <strong>Bankoverførsel:</strong><br>
             Reg. 9070 · Kontonr. 1642913146<br>
             Husk at skrive dit navn, adresse og e-mail i feltet "tekst til modtager".
+          </div>
+        </div>
+        <div class="stot-card mobilepay-card" id="donation">
+          <h3>Donér via MobilePay</h3>
+          <div class="price mobilepay-number">117084 <small>/ MobilePay</small></div>
+          <p style="color:var(--muted); margin:8px 0 0">Enhver donation tæller — stor som lille. Vælg selv beløbet.</p>
+          <div class="mobilepay-qr">
+            <img src="assets/img/774052177_1526338232841300_2918296098596947878_n.png" alt="MobilePay QR-kode — Sønderholm Butikshus" loading="lazy" decoding="async">
+          </div>
+          <a class="btn btn-mobilepay" href="mobilepay://send?phone=117084" style="width:100%; justify-content:center">Åbn MobilePay →</a>
+          <div class="bank-info mobilepay-info" style="margin-top:18px">
+            Scan QR-koden med din telefon eller søg efter <strong>117084</strong> i MobilePay-appen. Skriv gerne dit navn i beskedfeltet.
           </div>
         </div>
       </div>
